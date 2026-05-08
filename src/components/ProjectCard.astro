@@ -5,9 +5,10 @@ interface Props {
   image: string;
   tag?: string;
   alt?: string;
+  link?: string;
 }
 
-const { title, description, image, tag, alt } = Astro.props;
+const { title, description, image, tag, alt, link = "#" } = Astro.props;
 ---
 
 <div class="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/50 transition-all hover:border-indigo-500/50 hover:bg-zinc-900">
@@ -32,7 +33,7 @@ const { title, description, image, tag, alt } = Astro.props;
     <p class="text-sm text-zinc-400 line-clamp-2">{description}</p>
     
     <div class="mt-auto pt-6">
-      <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+      <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
         Λεπτομέρειες
         <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
