@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -22,6 +21,5 @@ const { title, description = "Web Developer Portfolio" } = Astro.props;
 	</head>
 	<body class="bg-[#0a0a0a] text-white selection:bg-indigo-500/30">
 		<slot />
-		<Footer />
 	</body>
 </html>
