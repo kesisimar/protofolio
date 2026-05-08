@@ -1,0 +1,27 @@
+---
+const skills = [
+  { name: 'WordPress', icon: 'W' },
+  { name: 'React', icon: 'R' },
+  { name: 'Cloudflare', icon: 'C' },
+  { name: 'JavaScript', icon: 'JS' },
+  { name: 'Tailwind', icon: 'T' },
+  { name: 'Clean Code', icon: '</>' },
+];
+---
+
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-2xl font-bold tracking-tight text-zinc-500 mb-12">Βασική Υποδομή</h2>
+    
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+      {skills.map((skill) => (
+        <div class="group flex flex-col items-center justify-center p-8 rounded-2xl border border-white/5 bg-zinc-900/30 transition-all hover:bg-zinc-900 hover:border-white/10">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-800 text-lg font-bold text-indigo-400 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+            {skill.icon}
+          </div>
+          <span class="text-sm font-medium text-zinc-400 group-hover:text-white transition-colors">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  tag?: string;
+}
+
+const { title, description, image, tag } = Astro.props;
+---
+
+<div class="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/50 transition-all hover:border-indigo-500/50 hover:bg-zinc-900">
+  <div class="aspect-[16/10] overflow-hidden">
+    <img 
+      src={image} 
+      alt={title} 
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      onerror="this.src='https://placehold.co/600x400/18181b/ffffff?text=Project+Image'"
+    />
+  </div>
+  
+  <div class="flex flex-1 flex-col p-6">
+    <div class="flex items-center justify-between mb-2">
+      <h3 class="text-xl font-bold text-white">{title}</h3>
+      {tag && (
+        <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-xs font-medium text-indigo-400 border border-indigo-500/20">
+          {tag}
+        </span>
+      )}
+    </div>
+    <p class="text-sm text-zinc-400 line-clamp-2">{description}</p>
+    
+    <div class="mt-auto pt-6">
+      <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+        Λεπτομέρειες
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </div>
+</div>
