@@ -8,8 +8,7 @@ const projects = [
     description: 'Σύγχρονη παρουσίαση βιομηχανικών κατασκευών. Μια πλατφόρμα που αναδεικνύει την ακρίβεια και την ποιότητα των μεταλλικών κατασκευών μέσω ενός minimal interface.',
     image: '/images/elite-metalwork.png',
     link: 'https://elite-metalwork.kesisimar.workers.dev/',
-    tag: 'CUSTOM CODE',
-    highlight: true
+    tag: 'CUSTOM CODE'
   },
   {
     title: 'Nutritionist Site',
@@ -74,11 +73,7 @@ const projects = [
               <a 
                 href={project.link} 
                 target="_blank"
-                class={`inline-flex items-center justify-between px-6 py-4 rounded-xl text-sm font-bold transition-all ${
-                  project.highlight 
-                  ? 'bg-[#c3bcfd] text-black hover:bg-[#b4abfd]' 
-                  : 'bg-[#1a1a1a] text-zinc-300 border border-white/5 hover:bg-[#222222] hover:text-white'
-                }`}
+                class="inline-flex items-center justify-between px-6 py-4 rounded-xl text-sm font-bold transition-all bg-[#1a1a1a] text-zinc-300 border border-white/5 hover:bg-[#c3bcfd] hover:text-black hover:border-transparent"
               >
                 Επίσκεψη στο Site
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
