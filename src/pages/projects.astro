@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+
+const projects = [
+  {
+    title: 'Elite Metalwork',
+    description: 'Σύγχρονη παρουσίαση βιομηχανικών κατασκευών. Μια πλατφόρμα που αναδεικνύει την ακρίβεια και την ποιότητα των μεταλλικών κατασκευών μέσω ενός minimal interface.',
+    image: '/images/elite-metalwork.png',
+    link: 'https://elite-metalwork.kesisimar.workers.dev/',
+    tag: 'CUSTOM CODE',
+    highlight: true
+  },
+  {
+    title: 'Nutritionist Site',
+    description: 'Clean & Health oriented design για επαγγελματία διατροφολόγο. Εστίαση στην εμπειρία του χρήστη και την εύκολη πρόσβαση σε πληροφορίες υγείας.',
+    image: '/images/nutritionist.png',
+    link: 'https://nutritionist-site-ar6.pages.dev/',
+    tag: 'UI/UX FOCUS'
+  },
+  {
+    title: 'Web Titans Stage',
+    description: 'Δυναμικό και high-tech agency site. Ένα "στάδιο" παρουσίασης τεχνολογικών δυνατοτήτων με έντονο χαρακτήρα και animations.',
+    image: '/images/webtitans.png',
+    link: 'https://stage.webtitans.gr/',
+    tag: 'AGENCY PORTAL'
+  },
+  {
+    title: 'Intzikiotis',
+    description: 'Ολοκληρωμένη λύση κατασκευασμένη με WordPress. Επαγγελματική παρουσίαση κατασκευαστικών υπηρεσιών με έμφαση στην αξιοπιστία.',
+    image: '/images/intzikiotis.png',
+    link: 'https://new.intzikiotis.gr/',
+    tag: 'WORDPRESS'
+  }
+];
+---
+
+<Layout title="Έργα - Portfolio 2026">
+  <Navbar />
+  
+  <main class="bg-[#0a0a0a] min-h-screen pt-32 pb-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Header Section -->
+      <div class="max-w-3xl mb-20">
+        <span class="text-zinc-500 text-xs font-bold tracking-widest uppercase mb-4 block">PORTFOLIO SHOWCASE</span>
+        <h1 class="text-5xl font-bold text-white mb-8">Επιλεγμένα Έργα</h1>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          Εξειδικευμένες λύσεις custom κώδικα και WordPress που συνδυάζουν την υψηλή αισθητική με την 
+          άψογη τεχνική υλοποίηση. Κάθε project είναι μια μοναδική αρχιτεκτονική προσέγγιση στον ψηφιακό κόσμο.
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project) => (
+          <div class="group bg-[#111111] rounded-2xl overflow-hidden border border-white/5 flex flex-col">
+            <div class="relative aspect-[16/9] overflow-hidden">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md px-3 py-1 rounded text-[10px] font-bold text-zinc-400 tracking-wider">
+                {project.tag}
+              </div>
+            </div>
+            
+            <div class="p-8 flex flex-col flex-1">
+              <h3 class="text-2xl font-bold text-white mb-4">{project.title}</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed mb-10 flex-1">
+                {project.description}
+              </p>
+              
+              <a 
+                href={project.link} 
+                target="_blank"
+                class={`inline-flex items-center justify-between px-6 py-4 rounded-xl text-sm font-bold transition-all ${
+                  project.highlight 
+                  ? 'bg-[#c3bcfd] text-black hover:bg-[#b4abfd]' 
+                  : 'bg-[#1a1a1a] text-zinc-300 border border-white/5 hover:bg-[#222222] hover:text-white'
+                }`}
+              >
+                Επίσκεψη στο Site
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#0a0a0a] border-t border-white/5 py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+      <span class="text-xl font-bold text-white">Portfolio</span>
+      <p class="text-[10px] text-zinc-600 uppercase tracking-widest">
+        © 2026 Developer Portfolio. Με επιφύλαξη παντός δικαιώματος.
+      </p>
+      <div class="flex gap-8 text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+        <a href="#" class="hover:text-white transition-colors">GitHub</a>
+        <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="#" class="hover:text-white transition-colors">Twitter</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
